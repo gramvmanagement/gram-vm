@@ -110,6 +110,8 @@ nav a:hover {
     min-width: 0;
     animation: slideUp 0.8s ease-out;
 
+    position: relative;
+    z-index: 2;
     align-self: center;
 }
 
@@ -155,6 +157,10 @@ nav a:hover {
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 2px;
+
+    position: relative;
+    z-index: 3;
+    touch-action: manipulation;
 
     transition: 0.2s ease;
 }
@@ -496,8 +502,43 @@ footer p {
 
         flex: none;
 
-        margin: 0 auto -30px;
+        position: relative;
+        margin: 0 auto 0;
         align-self: center;
+        z-index: 1;
+    }
+.hero-button {
+    display: inline-block;
+
+    margin-top: 35px;
+    padding: 15px 28px;
+
+    border: 1px solid #111;
+
+    background: #111;
+    color: #f4f4f2;
+
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    position: relative;
+    z-index: 3;
+    touch-action: manipulation;
+
+    transition: 0.2s ease;
+}
+
+.hero-button:hover {
+    background: transparent;
+    color: #111;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero-button:active {
+        transform: translateY(0);
     }
 
     .hero-image img {
