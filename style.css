@@ -3,9 +3,10 @@ body {
     max-width: 100%;
     overflow-x: hidden;
 }
+
 /* =========================
- *  BASE
- *  ========================= */
+ * BASE
+ * ========================= */
 
 * {
     box-sizing: border-box;
@@ -19,17 +20,30 @@ body {
     margin: 0;
     padding-top: 90px;
     background: #f4f4f2;
-    color: #000;
+    color: #111;
     font-family: Arial, Helvetica, sans-serif;
-    animation: pageFade 2.0s ease-out;
+    animation: pageFade 0.5s ease-out;
 }
 
-    @keyframes pageFade {
-       from {
-          opacity: 0;
-        }
-         to {
-          opacity: 1;
+@keyframes pageFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -37,10 +51,9 @@ a {
     color: inherit;
 }
 
-
 /* =========================
- *  HEADER
- *  ========================= */
+ * HEADER
+ * ========================= */
 
 header {
     position: fixed;
@@ -48,6 +61,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 100;
+
     min-height: 90px;
     padding: 20px 50px;
 
@@ -56,21 +70,21 @@ header {
     justify-content: space-between;
 
     border-bottom: 1px solid #f4f4f2;
+
     background: #000;
-    color:#ffffff;
+    color: #fff;
 }
 
 header h1 {
     margin: 0;
+
     font-size: 22px;
     font-weight: 700;
     letter-spacing: -1px;
-
 }
 
 header h1 a {
     text-decoration: none;
-
 }
 
 nav {
@@ -91,10 +105,9 @@ nav a:hover {
     text-decoration: underline;
 }
 
-
 /* =========================
- *  HERO
- *  ========================= */
+ * HERO
+ * ========================= */
 
 .hero {
     min-height: 680px;
@@ -104,24 +117,25 @@ nav a:hover {
     align-items: flex-end;
     justify-content: space-between;
     gap: 40px;
+
     border-bottom: 1px solid #111;
 
-    background: #ffffff;
+    background: #fff;
     overflow: hidden;
 }
-
 
 .hero-content {
     flex: 1 1 50%;
     max-width: 650px;
     min-width: 0;
-    animation: slideUp 0.8s ease-out;
 
     position: relative;
     z-index: 2;
-    align-self: center;
-}
 
+    align-self: center;
+
+    animation: slideUp 0.8s ease-out;
+}
 
 .eyebrow {
     margin: 0 0 25px;
@@ -143,6 +157,7 @@ nav a:hover {
 .hero-description {
     width: 100%;
     max-width: 470px;
+
     margin: 35px 0 0;
 
     font-size: 16px;
@@ -167,27 +182,31 @@ nav a:hover {
 
     position: relative;
     z-index: 3;
+
     touch-action: manipulation;
 
-    transition: 0.2s ease;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .hero-button:hover {
     background: transparent;
     color: #111;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
 
-    .hero-button:active {
-        transform: translateY(0);
-    }
+.hero-button:active {
+    transform: translateY(0);
+}
 
 .hero-image {
     position: relative;
     z-index: 1;
 
-    position: relative;
     flex: 0 1 50%;
     width: 50%;
     max-width: 650px;
@@ -198,6 +217,7 @@ nav a:hover {
     content: "";
 
     position: absolute;
+
     width: 500px;
     height: 500px;
 
@@ -217,6 +237,9 @@ nav a:hover {
 }
 
 .hero-image img {
+    position: relative;
+    z-index: 1;
+
     animation: float 4s ease-in-out infinite;
 }
 
@@ -224,13 +247,19 @@ nav a:hover {
     from {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-12px);
     }
+
     to {
         transform: translateY(0);
     }
 }
+
+/* =========================
+ * GENERAL SECTIONS
+ * ========================= */
 
 main > section:not(.hero) {
     padding: 100px 7vw;
@@ -246,8 +275,8 @@ main > section:not(.hero) > h2 {
 }
 
 /* =========================
- *  ABOUT HERO
- *  ========================= */
+ * ABOUT HERO
+ * ========================= */
 
 .about-hero {
     min-height: 680px;
@@ -257,22 +286,24 @@ main > section:not(.hero) > h2 {
     align-items: flex-end;
     justify-content: space-between;
     gap: 40px;
+
     border-bottom: 1px solid #111;
 
-    background: #f4f4f2;
+    background: #fff;
     overflow: hidden;
 }
 
-
 .about-hero-content {
     flex: 1 1 50%;
-    max-width: 100%;
+    max-width: 1200px;
     min-width: 0;
-    animation: slideUp 0.8s ease-out;
 
     position: relative;
     z-index: 2;
+
     align-self: center;
+
+    animation: slideUp 0.8s ease-out;
 }
 
 .about-hero h2 {
@@ -286,7 +317,8 @@ main > section:not(.hero) > h2 {
 
 .about-hero-description {
     width: 100%;
-    max-width: 100%;
+    max-width: 650px;
+
     margin: 35px 0 0;
 
     font-size: 16px;
@@ -294,8 +326,59 @@ main > section:not(.hero) > h2 {
 }
 
 /* =========================
- *  SUPPORT GRID
- *  ========================= */
+ * RESOURCE HERO
+ * ========================= */
+
+.resource-hero {
+    min-height: 680px;
+    padding: 70px 7vw 0;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+
+    border-bottom: 1px solid #111;
+
+    background: #fff;
+    overflow: hidden;
+}
+
+.resource-hero-content {
+    flex: 1 1 50%;
+    max-width: 1200px;
+    min-width: 0;
+
+    position: relative;
+    z-index: 2;
+
+    align-self: center;
+
+    animation: slideUp 0.8s ease-out;
+}
+
+.resource-hero h2 {
+    margin: 0;
+
+    font-size: clamp(60px, 8vw, 120px);
+    line-height: 0.88;
+    letter-spacing: -6px;
+    text-transform: uppercase;
+}
+
+.resource-hero-description {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 35px 0 0;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* =========================
+ * SUPPORT GRID
+ * ========================= */
 
 .support-grid {
     display: grid;
@@ -305,6 +388,7 @@ main > section:not(.hero) > h2 {
     border-left: 1px solid #111;
 
     background: #111;
+
     gap: 0;
 }
 
@@ -319,7 +403,6 @@ main > section:not(.hero) > h2 {
     border-bottom: 1px solid #111;
 
     position: relative;
-
 }
 
 .card h3 {
@@ -361,86 +444,89 @@ main > section:not(.hero) > h2 {
     fill: none;
 }
 
+/* =========================
+ * PROOF OF WORK
+ * ========================= */
 
- /* =========================
-  *  PROOF OF WORK
-  *  ========================= */
+.proof {
+    padding: 100px 7vw;
 
- .proof {
-     padding: 100px 7vw;
-     background: #ffffff;
-     color: #000
- }
+    background: #fff;
+    color: #111;
+}
 
- .proof > h2 {
-     margin: 0 0 50px;
+.proof > h2 {
+    margin: 0 0 50px;
 
-     font-size: clamp(40px, 5vw, 72px);
-     line-height: 0.95;
-     letter-spacing: -3px;
-     text-transform: uppercase;
- }
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 0.95;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+}
 
- .resource-list {
-     border-top: 1px solid #111;
- }
+.resource-list {
+    border-top: 1px solid #111;
+}
 
- .resource {
-     display: grid;
-     grid-template-columns: 60px 1fr 40px;
-     gap: 30px;
+.resource {
+    display: grid;
+    grid-template-columns: 60px 1fr 40px;
+    gap: 30px;
 
-     padding: 30px 0;
+    padding: 30px 0;
 
-     color: #111;
-     text-decoration: none;
+    color: #111;
+    text-decoration: none;
 
-     border-bottom: 1px solid #111;
- }
+    border-bottom: 1px solid #111;
+}
 
- .resource-number {
-     font-size: 11px;
-     font-weight: 700;
-     letter-spacing: 2px;
- }
+.resource-number {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
 
- .resource-content h3 {
-     margin: 0 0 10px;
+.resource-content h3 {
+    margin: 0 0 10px;
 
-     font-size: 25px;
-     line-height: 1;
-     letter-spacing: -1px;
-     text-transform: uppercase;
- }
+    font-size: 25px;
+    line-height: 1;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
 
- .resource-content p {
-     max-width: 550px;
+.resource-content p {
+    max-width: 550px;
 
-     margin: 0;
+    margin: 0;
 
-     font-size: 14px;
-     line-height: 1.5;
- }
+    font-size: 14px;
+    line-height: 1.5;
+}
 
- .resource-arrow {
-     font-size: 24px;
-     text-align: right;
- }
+.resource-arrow {
+    font-size: 24px;
+    text-align: right;
 
- .resource:hover .resource-arrow {
-     transform: translate(10px, -10px);
- }
+    transition: transform 0.2s ease;
+}
+
+.resource:hover .resource-arrow {
+    transform: translate(10px, -10px);
+}
 
 /* =========================
- *  FOOTER
- *  ========================= */
+ * FOOTER
+ * ========================= */
 
 footer {
     padding: 10px 7vw;
+
     text-align: center;
 
-    background: #000000;
-    color: #ffffff;
+    background: #000;
+    color: #fff;
 }
 
 footer p {
@@ -448,23 +534,38 @@ footer p {
     font-size: 14px;
 }
 
+/* =========================
+ * JUMP TO TOP
+ * ========================= */
+
 .jump-to-top {
     position: fixed;
     right: 24px;
     bottom: 24px;
+
     width: 48px;
     height: 48px;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     background: #111;
     color: #f4f4f2;
+
     text-decoration: none;
+
     font-size: 18px;
     font-weight: 700;
+
     border-radius: 999px;
+
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
-    transition: transform 0.2s ease, opacity 0.2s ease;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+
     z-index: 1000;
 }
 
@@ -472,56 +573,59 @@ footer p {
     transform: translateY(-2px);
 }
 
-@media (max-width: 700px) {
-    .jump-to-top {
-        right: 16px;
-        bottom: 16px;
-        width: 44px;
-        height: 44px;
-    }
-}
-
 /* =========================
- *  MOBILE
- *  ========================= */
+ * MOBILE
+ * ========================= */
 
 @media (max-width: 700px) {
 
-    .card {
-        min-height: 200px;
-        padding: 28px;
+    body {
+        padding-top: 120px;
     }
+
+    /* HEADER */
+
+ @media (max-width: 700px) {
+
+ @media (max-width: 700px) {
 
     header {
         padding: 20px;
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
     }
 
     header h1 {
-        font-size: 20px;
+        font-size: 16px;
+        white-space: nowrap;
     }
 
     nav {
-        width: 100%;
+        width: auto;
         display: flex;
-        justify-content: space-between;
-        gap: 10px;
-        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
     }
 
     nav a {
-        font-size: 11px;
+        font-size: 10px;
+        text-align: center;
     }
 
+}
+
+}
 
     /* HERO */
 
     .hero {
         width: 100%;
         min-height: auto;
-        padding: 60px 20px 0;
+
+        padding: 60px 20px 70px;
 
         display: flex;
         flex-direction: column;
@@ -551,49 +655,19 @@ footer p {
         max-width: 450px;
     }
 
+    .hero-button {
+        margin-top: 30px;
+    }
+
     .hero-image {
         width: 100%;
         max-width: 400px;
 
         flex: none;
 
-        position: relative;
-        margin: 0 auto 0;
+        margin: 0 auto;
+
         align-self: center;
-        z-index: 1;
-    }
-.hero-button {
-    display: inline-block;
-
-    margin-top: 35px;
-    padding: 15px 28px;
-
-    border: 1px solid #111;
-
-    background: #111;
-    color: #f4f4f2;
-
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 2px;
-
-    position: relative;
-    z-index: 3;
-    touch-action: manipulation;
-
-    transition: 0.2s ease;
-}
-
-.hero-button:hover {
-    background: transparent;
-    color: #111;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .hero-button:active {
-        transform: translateY(0);
     }
 
     .hero-image img {
@@ -601,8 +675,87 @@ footer p {
         height: auto;
     }
 
+    .hero-image::before {
+        width: 350px;
+        height: 350px;
 
-    /* SECTIONS */
+        right: 0;
+        bottom: 5%;
+    }
+
+    /* ABOUT */
+
+    .about-hero {
+        width: 100%;
+        min-height: auto;
+
+        padding: 60px 20px 70px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 30px;
+    }
+
+    .about-hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-hero h2 {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(48px, 15vw, 80px);
+        line-height: 0.9;
+        letter-spacing: -3px;
+
+        overflow-wrap: break-word;
+    }
+
+    .about-hero-description {
+        width: 100%;
+        max-width: 650px;
+    }
+
+    /* RESOURCES */
+
+    .resource-hero {
+        width: 100%;
+        min-height: auto;
+
+        padding: 60px 20px 70px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 30px;
+    }
+
+    .resource-hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .resource-hero h2 {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(48px, 15vw, 80px);
+        line-height: 0.9;
+        letter-spacing: -3px;
+
+        overflow-wrap: break-word;
+    }
+
+    .resource-hero-description {
+        width: 100%;
+        max-width: 650px;
+    }
+
+    /* GENERAL SECTIONS */
 
     main > section:not(.hero) {
         width: 100%;
@@ -613,7 +766,6 @@ footer p {
         font-size: 42px;
         margin-bottom: 35px;
     }
-
 
     /* CARDS */
 
@@ -626,9 +778,39 @@ footer p {
         padding: 28px;
     }
 
+    /* RESOURCE LIST */
+
+    .resource {
+        grid-template-columns: 40px 1fr 30px;
+        gap: 15px;
+        padding: 25px 0;
+    }
+
+    .resource-content h3 {
+        font-size: 21px;
+    }
+
+    .resource-content p {
+        font-size: 13px;
+    }
+    
+    .about-hero-content-ii h2 {
+        font-size: 40px;
+    }
+
     /* FOOTER */
 
     footer {
-        padding: 60px 20px;
+        padding: 10px 20px;
+    }
+
+    /* JUMP TO TOP */
+
+    .jump-to-top {
+        right: 16px;
+        bottom: 16px;
+
+        width: 44px;
+        height: 44px;
     }
 }
