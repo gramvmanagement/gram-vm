@@ -293,55 +293,6 @@ main > section:not(.hero) > h2 {
     line-height: 1.7;
 }
 
-
-/* =========================
- *  RESOURCE HERO
- *  ========================= */
-
-.resource-hero {
-    min-height: 680px;
-    padding: 70px 7vw 0;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 40px;
-    border-bottom: 1px solid #111;
-
-    background: #fff;
-    overflow: hidden;
-}
-
-
-.resource-hero-content {
-    flex: 1 1 50%;
-    max-width: 100%;
-    min-width: 0;
-    animation: slideUp 0.8s ease-out;
-
-    position: relative;
-    z-index: 2;
-    align-self: center;
-}
-
-.resource-hero h2 {
-    margin: 0;
-
-    font-size: clamp(60px, 8vw, 120px);
-    line-height: 0.88;
-    letter-spacing: -6px;
-    text-transform: uppercase;
-}
-
-.resource-hero-description {
-    width: 100%;
-    max-width: 100%;
-    margin: 35px 0 0;
-
-    font-size: 16px;
-    line-height: 1.7;
-}
-
 /* =========================
  *  SUPPORT GRID
  *  ========================= */
