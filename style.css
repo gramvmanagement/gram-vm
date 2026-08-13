@@ -1,15 +1,15 @@
+/* =========================
+   BASE
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
     max-width: 100%;
     overflow-x: hidden;
-}
-
-/* =========================
- * BASE
- * ========================= */
-
-* {
-    box-sizing: border-box;
 }
 
 html {
@@ -18,11 +18,14 @@ html {
 
 body {
     margin: 0;
-    padding-top: 90px;
+    padding-top: 110px;
+
     background: #f4f4f2;
     color: #111;
+
     font-family: Arial, Helvetica, sans-serif;
-    animation: pageFade 0.5s ease-out;
+
+    animation: pageFade 1s ease-out;
 }
 
 @keyframes pageFade {
@@ -47,57 +50,84 @@ body {
     }
 }
 
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
 a {
     color: inherit;
 }
 
+
 /* =========================
- * HEADER
- * ========================= */
+   HEADER
+   ========================= */
 
 header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 100;
 
+    width: 100%;
     min-height: 90px;
-    padding: 20px 50px;
+
+    padding: 20px;
+
+    z-index: 1000;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    border-bottom: 1px solid #f4f4f2;
-
     background: #000;
     color: #fff;
+
+    border-bottom: 1px solid #f4f4f2;
 }
 
 header h1 {
     margin: 0;
 
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -1px;
+    line-height: 1;
 }
 
 header h1 a {
+    display: block;
+
     text-decoration: none;
+}
+
+header h1 img {
+    display: block;
+
+    width: 40px;
+    height: auto;
 }
 
 nav {
     display: flex;
     align-items: center;
+
     gap: 28px;
 }
 
 nav a {
     text-decoration: none;
+
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 1px;
+
     text-transform: uppercase;
 }
 
@@ -105,34 +135,38 @@ nav a:hover {
     text-decoration: underline;
 }
 
+
 /* =========================
- * HERO
- * ========================= */
+   HERO
+   ========================= */
 
 .hero {
     min-height: 680px;
+
     padding: 70px 7vw 0;
 
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
+
     gap: 40px;
+
+    background: #fff;
 
     border-bottom: 1px solid #111;
 
-    background: #fff;
     overflow: hidden;
 }
 
 .hero-content {
     flex: 1 1 50%;
+
+    width: 50%;
     max-width: 650px;
     min-width: 0;
 
     position: relative;
     z-index: 2;
-
-    align-self: center;
 
     animation: slideUp 0.8s ease-out;
 }
@@ -142,6 +176,7 @@ nav a:hover {
 
     font-size: 12px;
     font-weight: 700;
+
     letter-spacing: 5px;
 }
 
@@ -150,7 +185,9 @@ nav a:hover {
 
     font-size: clamp(60px, 8vw, 120px);
     line-height: 0.88;
+
     letter-spacing: -6px;
+
     text-transform: uppercase;
 }
 
@@ -176,6 +213,7 @@ nav a:hover {
     color: #f4f4f2;
 
     text-decoration: none;
+
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -195,7 +233,9 @@ nav a:hover {
 .hero-button:hover {
     background: transparent;
     color: #111;
+
     transform: translateY(-3px);
+
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -203,14 +243,23 @@ nav a:hover {
     transform: translateY(0);
 }
 
+
+/* =========================
+   HERO IMAGE
+   ========================= */
+
 .hero-image {
     position: relative;
     z-index: 1;
 
     flex: 0 1 50%;
+
     width: 50%;
     max-width: 650px;
-    margin-bottom: 0;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
 
 .hero-image::before {
@@ -240,26 +289,18 @@ nav a:hover {
     position: relative;
     z-index: 1;
 
+    display: block;
+
+    width: 100%;
+    height: auto;
+
     animation: float 4s ease-in-out infinite;
 }
 
-@keyframes float {
-    from {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
-
-    to {
-        transform: translateY(0);
-    }
-}
 
 /* =========================
- * GENERAL SECTIONS
- * ========================= */
+   GENERAL SECTIONS
+   ========================= */
 
 main > section:not(.hero) {
     padding: 100px 7vw;
@@ -270,38 +311,44 @@ main > section:not(.hero) > h2 {
 
     font-size: clamp(40px, 5vw, 72px);
     line-height: 0.95;
+
     letter-spacing: -3px;
+
     text-transform: uppercase;
 }
 
+
 /* =========================
- * ABOUT HERO
- * ========================= */
+   ABOUT HERO
+   ========================= */
 
 .about-hero {
     min-height: 680px;
+
     padding: 70px 7vw 0;
 
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
+
     gap: 40px;
+
+    background: #fff;
 
     border-bottom: 1px solid #111;
 
-    background: #fff;
     overflow: hidden;
 }
 
 .about-hero-content {
-    flex: 1 1 50%;
+    flex: 1 1 100%;
+
+    width: 100%;
     max-width: 1200px;
     min-width: 0;
 
     position: relative;
     z-index: 2;
-
-    align-self: center;
 
     animation: slideUp 0.8s ease-out;
 }
@@ -311,13 +358,15 @@ main > section:not(.hero) > h2 {
 
     font-size: clamp(60px, 8vw, 120px);
     line-height: 0.88;
+
     letter-spacing: -6px;
+
     text-transform: uppercase;
 }
 
 .about-hero-description {
     width: 100%;
-    max-width: 650px;
+    max-width: 700px;
 
     margin: 35px 0 0;
 
@@ -325,84 +374,36 @@ main > section:not(.hero) > h2 {
     line-height: 1.7;
 }
 
-/* =========================
- * RESOURCE HERO
- * ========================= */
-
-.resource-hero {
-    min-height: 680px;
-    padding: 70px 7vw 0;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 40px;
-
-    border-bottom: 1px solid #111;
-
-    background: #fff;
-    overflow: hidden;
-}
-
-.resource-hero-content {
-    flex: 1 1 50%;
-    max-width: 1200px;
-    min-width: 0;
-
-    position: relative;
-    z-index: 2;
-
-    align-self: center;
-
-    animation: slideUp 0.8s ease-out;
-}
-
-.resource-hero h2 {
-    margin: 0;
-
-    font-size: clamp(60px, 8vw, 120px);
-    line-height: 0.88;
-    letter-spacing: -6px;
-    text-transform: uppercase;
-}
-
-.resource-hero-description {
-    width: 100%;
-    max-width: 650px;
-
-    margin: 35px 0 0;
-
-    font-size: 16px;
-    line-height: 1.7;
-}
 
 /* =========================
- * SUPPORT GRID
- * ========================= */
+   SUPPORT GRID
+   ========================= */
 
 .support-grid {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
 
-    border-top: 1px solid #111;
-    border-left: 1px solid #111;
+    gap: 0;
 
     background: #111;
 
-    gap: 0;
+    border-top: 1px solid #111;
+    border-left: 1px solid #111;
 }
 
 .card {
     min-height: 230px;
+
     padding: 35px;
+
+    position: relative;
 
     background: #f4f4f2;
     color: #111;
 
     border-right: 1px solid #111;
     border-bottom: 1px solid #111;
-
-    position: relative;
 }
 
 .card h3 {
@@ -410,7 +411,9 @@ main > section:not(.hero) > h2 {
 
     font-size: 28px;
     line-height: 0.95;
+
     letter-spacing: -1.5px;
+
     text-transform: uppercase;
 }
 
@@ -438,21 +441,20 @@ main > section:not(.hero) > h2 {
     width: 28px;
     height: 28px;
 
+    fill: none;
     stroke: #111;
     stroke-width: 1.5;
-
-    fill: none;
 }
 
+
 /* =========================
- * PROOF OF WORK
- * ========================= */
+   PROOF OF WORK
+   ========================= */
 
 .proof {
     padding: 100px 7vw;
 
     background: #fff;
-    color: #111;
 }
 
 .proof > h2 {
@@ -460,7 +462,9 @@ main > section:not(.hero) > h2 {
 
     font-size: clamp(40px, 5vw, 72px);
     line-height: 0.95;
+
     letter-spacing: -3px;
+
     text-transform: uppercase;
 }
 
@@ -470,7 +474,9 @@ main > section:not(.hero) > h2 {
 
 .resource {
     display: grid;
+
     grid-template-columns: 60px 1fr 40px;
+
     gap: 30px;
 
     padding: 30px 0;
@@ -484,6 +490,7 @@ main > section:not(.hero) > h2 {
 .resource-number {
     font-size: 11px;
     font-weight: 700;
+
     letter-spacing: 2px;
 }
 
@@ -492,7 +499,9 @@ main > section:not(.hero) > h2 {
 
     font-size: 25px;
     line-height: 1;
+
     letter-spacing: -1px;
+
     text-transform: uppercase;
 }
 
@@ -507,6 +516,7 @@ main > section:not(.hero) > h2 {
 
 .resource-arrow {
     font-size: 24px;
+
     text-align: right;
 
     transition: transform 0.2s ease;
@@ -516,30 +526,34 @@ main > section:not(.hero) > h2 {
     transform: translate(10px, -10px);
 }
 
+
 /* =========================
- * FOOTER
- * ========================= */
+   FOOTER
+   ========================= */
 
 footer {
     padding: 10px 7vw;
 
-    text-align: center;
-
     background: #000;
     color: #fff;
+
+    text-align: center;
 }
 
 footer p {
     margin: 0;
+
     font-size: 14px;
 }
 
+
 /* =========================
- * JUMP TO TOP
- * ========================= */
+   JUMP TO TOP
+   ========================= */
 
 .jump-to-top {
     position: fixed;
+
     right: 24px;
     bottom: 24px;
 
@@ -550,74 +564,77 @@ footer p {
     align-items: center;
     justify-content: center;
 
+    z-index: 1000;
+
     background: #111;
     color: #f4f4f2;
+
+    border-radius: 999px;
 
     text-decoration: none;
 
     font-size: 18px;
     font-weight: 700;
 
-    border-radius: 999px;
-
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
 
     transition:
         transform 0.2s ease,
         opacity 0.2s ease;
-
-    z-index: 1000;
 }
 
 .jump-to-top:hover {
     transform: translateY(-2px);
 }
 
+
 /* =========================
- * MOBILE
- * ========================= */
+   MOBILE
+   ========================= */
 
 @media (max-width: 700px) {
 
-    body {
-        padding-top: 120px;
-    }
-
     /* HEADER */
 
- @media (max-width: 700px) {
-
- @media (max-width: 700px) {
-
     header {
-        padding: 20px;
-        display: flex;
+        min-height: 50px;
+
+        padding: 10px;
+
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+
         gap: 15px;
     }
 
     header h1 {
-        font-size: 16px;
+        margin: 0;
+
         white-space: nowrap;
+    }
+
+    header h1 img {
+        width: 30px;
+        height: auto;
     }
 
     nav {
         width: auto;
+
         display: flex;
+        align-items: center;
         justify-content: center;
+
         gap: 20px;
     }
 
     nav a {
         font-size: 10px;
+
         text-align: center;
     }
 
-}
-
-}
 
     /* HERO */
 
@@ -625,10 +642,11 @@ footer p {
         width: 100%;
         min-height: auto;
 
-        padding: 60px 20px 70px;
+        padding: 60px 20px 0;
 
         display: flex;
         flex-direction: column;
+
         align-items: flex-start;
 
         gap: 30px;
@@ -639,11 +657,19 @@ footer p {
         max-width: 100%;
     }
 
+    .eyebrow {
+        margin-bottom: 20px;
+
+        font-size: 10px;
+        letter-spacing: 4px;
+    }
+
     .hero h2 {
         width: 100%;
         max-width: 100%;
 
         font-size: clamp(48px, 15vw, 80px);
+
         line-height: 0.9;
         letter-spacing: -3px;
 
@@ -653,10 +679,9 @@ footer p {
     .hero-description {
         width: 100%;
         max-width: 450px;
-    }
 
-    .hero-button {
-        margin-top: 30px;
+        font-size: 14px;
+        line-height: 1.6;
     }
 
     .hero-image {
@@ -668,6 +693,19 @@ footer p {
         margin: 0 auto;
 
         align-self: center;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .hero-image::before {
+        width: 300px;
+        height: 300px;
+
+        right: 50%;
+
+        transform: translateX(50%);
     }
 
     .hero-image img {
@@ -675,13 +713,21 @@ footer p {
         height: auto;
     }
 
-    .hero-image::before {
-        width: 350px;
-        height: 350px;
 
-        right: 0;
-        bottom: 5%;
+    /* GENERAL SECTIONS */
+
+    main > section:not(.hero) {
+        width: 100%;
+
+        padding: 70px 20px;
     }
+
+    main > section:not(.hero) > h2 {
+        margin-bottom: 35px;
+
+        font-size: 42px;
+    }
+
 
     /* ABOUT */
 
@@ -689,13 +735,9 @@ footer p {
         width: 100%;
         min-height: auto;
 
-        padding: 60px 20px 70px;
+        padding: 70px 20px;
 
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-
-        gap: 30px;
+        display: block;
     }
 
     .about-hero-content {
@@ -704,70 +746,22 @@ footer p {
     }
 
     .about-hero h2 {
-        width: 100%;
-        max-width: 100%;
-
         font-size: clamp(48px, 15vw, 80px);
+
         line-height: 0.9;
         letter-spacing: -3px;
-
-        overflow-wrap: break-word;
     }
 
     .about-hero-description {
         width: 100%;
-        max-width: 650px;
-    }
-
-    /* RESOURCES */
-
-    .resource-hero {
-        width: 100%;
-        min-height: auto;
-
-        padding: 60px 20px 70px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-
-        gap: 30px;
-    }
-
-    .resource-hero-content {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .resource-hero h2 {
-        width: 100%;
         max-width: 100%;
 
-        font-size: clamp(48px, 15vw, 80px);
-        line-height: 0.9;
-        letter-spacing: -3px;
-
-        overflow-wrap: break-word;
+        font-size: 14px;
+        line-height: 1.6;
     }
 
-    .resource-hero-description {
-        width: 100%;
-        max-width: 650px;
-    }
 
-    /* GENERAL SECTIONS */
-
-    main > section:not(.hero) {
-        width: 100%;
-        padding: 70px 20px;
-    }
-
-    main > section:not(.hero) > h2 {
-        font-size: 42px;
-        margin-bottom: 35px;
-    }
-
-    /* CARDS */
+    /* SUPPORT GRID */
 
     .support-grid {
         grid-template-columns: 1fr;
@@ -775,34 +769,50 @@ footer p {
 
     .card {
         min-height: 190px;
+
         padding: 28px;
     }
 
-    /* RESOURCE LIST */
+    .card h3 {
+        font-size: 25px;
+    }
+
+
+    /* PROOF */
+
+    .proof {
+        padding: 70px 20px;
+    }
+
+    .proof > h2 {
+        font-size: 42px;
+
+        margin-bottom: 35px;
+    }
 
     .resource {
         grid-template-columns: 40px 1fr 30px;
+
         gap: 15px;
+
         padding: 25px 0;
     }
 
     .resource-content h3 {
-        font-size: 21px;
+        font-size: 20px;
     }
 
     .resource-content p {
         font-size: 13px;
     }
-    
-    .about-hero-content-ii h2 {
-        font-size: 40px;
-    }
+
 
     /* FOOTER */
 
     footer {
-        padding: 10px 20px;
+        padding: 60px 20px;
     }
+
 
     /* JUMP TO TOP */
 
