@@ -589,6 +589,91 @@ footer p {
 
 
 /* =========================
+   FEATURED RESOURCE
+   ========================= */
+
+.featured-resource {
+    padding: 100px 7vw;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(360px, 0.7fr);
+    align-items: center;
+    gap: 35px;
+
+    background: #f4f4f2;
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #111;
+}
+
+.featured-resource-image {
+    position: relative;
+
+    padding: 18px;
+
+    background: #fff;
+    border: 1px solid #111;
+    overflow: hidden;
+}
+
+.featured-resource-image::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image: radial-gradient(
+        #111 1px,
+        transparent 1px
+    );
+
+    background-size: 8px 8px;
+
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.featured-resource-image img {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border: 1px solid #111;
+}
+
+.featured-resource-content {
+    max-width: 500px;
+}
+
+.featured-resource-content h2 {
+    margin: 0;
+
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: 0.9;
+
+    letter-spacing: -4px;
+
+    text-transform: uppercase;
+}
+
+.featured-resource-content p:not(.eyebrow) {
+    max-width: 470px;
+
+    margin: 30px 0 0;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.featured-resource-content .hero-button {
+    margin-top: 30px;
+}
+
+
+/* =========================
    MOBILE
    ========================= */
 
@@ -673,7 +758,7 @@ footer p {
         line-height: 0.9;
         letter-spacing: -3px;
 
-        overflow-wrap: break-word;
+        overflow-wrap: normal;
     }
 
     .hero-description {
@@ -746,10 +831,14 @@ footer p {
     }
 
     .about-hero h2 {
-        font-size: clamp(48px, 15vw, 80px);
+        font-size: clamp(42px, 13vw, 72px);
 
         line-height: 0.9;
         letter-spacing: -3px;
+
+        overflow-wrap: normal;
+        word-break: normal;
+        hyphens: none;
     }
 
     .about-hero-description {
@@ -768,9 +857,12 @@ footer p {
     }
 
     .card {
-        min-height: 190px;
-
+        min-height: 0;
         padding: 28px;
+    }
+
+    .card-icon {
+        margin-bottom: 18px;
     }
 
     .card h3 {
@@ -804,6 +896,67 @@ footer p {
 
     .resource-content p {
         font-size: 13px;
+    }
+
+
+    /* FEATURED RESOURCE */
+
+    .featured-resource {
+        width: 100%;
+        min-width: 0;
+
+        padding: 70px 20px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 40px;
+    }
+
+    .featured-resource-image {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        padding: 10px;
+    }
+
+    .featured-resource-image img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .featured-resource-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .featured-resource-content h2 {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: clamp(42px, 13vw, 58px);
+        line-height: 0.9;
+        letter-spacing: -3px;
+
+        overflow-wrap: normal;
+    }
+
+    .featured-resource-content p:not(.eyebrow) {
+        width: 100%;
+        max-width: 100%;
+
+        margin-top: 25px;
+
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .featured-resource-content .hero-button {
+        margin-top: 25px;
     }
 
 
