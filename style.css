@@ -674,6 +674,23 @@ footer p {
 
 
 /* =========================
+   CONTACT SECTION
+   ========================= */
+
+.contact {
+    /* reuse general section spacing and keep content centered */
+}
+
+.contact-description {
+    max-width: 700px;
+    margin: 20px 0 0;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================
    MOBILE
    ========================= */
 
@@ -957,6 +974,7 @@ footer p {
 
     .featured-resource-content .hero-button {
         margin-top: 25px;
+
     }
 
 
